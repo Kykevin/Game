@@ -76,7 +76,7 @@ void MapTile::setPathType(const int pathType){
 	upEnabled = LibraryAPI::getInstance()->pathUpEnabled(pathType);
 	leftEnabled = LibraryAPI::getInstance()->pathLeftEnabled(pathType);
 	downEnabled = LibraryAPI::getInstance()->pathDownEnabled(pathType);
-	rightEnabled = LibraryAPI::getInstance()->pathDownEnabled(pathType);
+	rightEnabled = LibraryAPI::getInstance()->pathRightEnabled(pathType);
 }
 
 void MapTile::setSize(Size size){

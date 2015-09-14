@@ -11,7 +11,7 @@ bool BattleScene::init(){
 
 	this->setContentSize(Size(1080, 670));
 	this->setAnchorPoint(Vec2(0, 0));
-	this->setPosition(Vec2(0, 0));
+	this->setPosition(Vec2(0, 960));
 
 	auto tempBattleGround = LayerColor::create(Color4B(255, 255, 255, 255), 1080, 670);
 	this->addChild(tempBattleGround);

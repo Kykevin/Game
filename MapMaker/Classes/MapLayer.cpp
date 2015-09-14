@@ -35,17 +35,33 @@ void MapLayer::initWithFileAndCharactorType(
 	container->setInnerContainerSize(Size(800, maxRowNumber * 160));
 	container->scrollToBottom(0, false);
 
+	
 	MapTile * newTile = MapTile::create();
 	newTile->setProperty(3, 0, 1, 0, Size(160, 160));
 	newTile->setPosition(Vec2(2 * 160, (maxRowNumber - 1) * 160));
 	mapArray[maxRowNumber - 1][2] = newTile;
 	this->insertChild(newTile, 0);
 
+
 	newTile = MapTile::create();
-	newTile->setProperty(1, 0, 0, 0, Size(160, 160));
-	newTile->setPosition(Vec2(2 * 160, 0));
-	mapArray[0][2] = newTile;
+	newTile->setProperty(10, 0, 1, 0, Size(160, 160));
+	newTile->setPosition(Vec2(0 * 160, 0));
+	mapArray[0][0] = newTile;
 	this->insertChild(newTile, 0);
+
+	newTile = MapTile::create();
+	newTile->setProperty(7, 0, 0, 0, Size(160, 160));
+	newTile->setPosition(Vec2(4 * 160, 0));
+	mapArray[0][4] = newTile;
+	this->insertChild(newTile, 0);
+
+	for (int i = 1; i < 4; ++i){
+		newTile = MapTile::create();
+		newTile->setProperty(14, 0, 0, 0, Size(160, 160));
+		newTile->setPosition(Vec2(i * 160, 0));
+		mapArray[0][i] = newTile;
+		this->insertChild(newTile, 0);
+	}
 
 	character = Character::create();
 	character->setTexture("character/character001.png");
