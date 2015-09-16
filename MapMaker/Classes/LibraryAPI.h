@@ -4,6 +4,7 @@
 #include "cocos2d.h"
 #include "PathType.h"
 #include "Item.h"
+#include "RamdomProperty.h"
 
 USING_NS_CC;
 
@@ -15,6 +16,12 @@ public:
 		static LibraryAPI singleton = LibraryAPI();
 		return &singleton;
 	}
+
+	int getDropType();
+	int getDropType(double dropRate);
+	int getDropType(double dropRate, int dropType, int dropMultiplier);
+
+	int getDropItem(int dropType);
 
 	void newRandomSeed(unsigned long seed);
 
@@ -73,7 +80,10 @@ public:
 
 private:
 	PathType * pathType;
-	default_random_engine * randomEngine = NULL;
+	RamdomProperty * randomDelegate;
 };
+
+
+
 
 #endif
